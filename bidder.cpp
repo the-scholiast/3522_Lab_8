@@ -14,6 +14,7 @@ void Bidder::update(Auctioneer *auctioneer) {
     Bidder* current_highest_bidder = auctioneer->getHighestBidder();
     double current_highest_bid = auctioneer->getHighestBid();
     double bid_chance = static_cast<double>(rand()) / RAND_MAX; 
+    cout << bid_chance << endl;
 
     if (current_highest_bidder != this && 
         current_highest_bid * bid_increase_perc <= budget && 

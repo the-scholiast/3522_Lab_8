@@ -5,6 +5,9 @@ using namespace std;
 
 Auction::Auction(vector<Bidder *> bidders) {
     // TODO: register every bidder with this auction's auctioneer.
+    for( Bidder* bidder : bidders){
+        auctioneer.register_bidder(bidder);
+    }
 }
 
 void Auction::simulate_auction(string item, double start_price) {
@@ -13,4 +16,9 @@ void Auction::simulate_auction(string item, double start_price) {
     // notifications (see README for the observer flow this triggers).
     // Once the chain settles, print the winner (auctioneer's highest
     // bidder/bid) and a per-bidder summary of each bidder's highest bid.
+    cout << item << " at starting price $" << start_price << endl;
+    auctioneer.accept_bid(start_price);
+    // auctioneer.notify_bidders();
+    cout << "The " << item << "goes to " <<auctioneer.getHighestBidder() << "for $" << auctioneer.getHighestBid() << endl;
+    auctioneer.printBiddersSummary();  
 }
