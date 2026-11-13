@@ -47,42 +47,42 @@ int main()
   bidders.push_back(new Bidder("Scott", 4000, generateRandom(MIN_PROBABILITY, MAX_PROBABILITY), 2));
 
   // TODO: prompt the user for the item name and starting price.
-  // cout << "Enter item name" << endl;
-  // getline(cin, itemName);
-  // cout << "Enter price" << endl;
-  // getline(cin, strPrice);
-  // price = stod(strPrice);
+  cout << "Enter item name" << endl;
+  getline(cin, itemName);
+  cout << "Enter price" << endl;
+  getline(cin, strPrice);
+  price = stod(strPrice);
 
   // TODO: give the user the option to either start the auction with just
   // the preloaded bidders above, or add more bidders first (prompting for
   // each new bidder's name, budget, bid_probability, and bid_increase_perc).
-  // while (true) {
-  //   cout << "Add more bidders? y/n" << endl;
-  //   cin >> answer;
-  //   if (answer == "y"){
-  //     cout << "Enter name" << endl;
-  //     getline(cin, bidderName);
-  //     cout << "Enter budget" << endl;
-  //     getline(cin, strbidderBudget);
-  //     bidderBudget = stod(strbidderBudget);
-  //     cout << "Enter bid probability" << endl;
-  //     getline(cin, strBidProbability);
-  //     bidProbability = stod(strBidProbability);
-  //     cout << "Enter bid increase perc" << endl;
-  //     getline(cin, strBidIncreasePerc);
-  //     bidIncreasePerc = stod(strBidIncreasePerc);
-  //   }
-  //   bidders.push_back(new Bidder(bidderName, bidderBudget, bidProbability, bidIncreasePerc));
-  //   cout << "Continue? y/n" << endl;
-  //   cin >> answer;
-  //   if (answer == "n") break;
-  // }
+  while (true) {
+    cout << "Add more bidders? y/n" << endl;
+    getline(cin, answer);
+    if (answer == "y"){
+      cout << "Enter name" << endl;
+      getline(cin, bidderName);
+      cout << "Enter budget" << endl;
+      getline(cin, strbidderBudget);
+      bidderBudget = stod(strbidderBudget);
+      cout << "Enter bid probability" << endl;
+      getline(cin, strBidProbability);
+      bidProbability = stod(strBidProbability);
+      cout << "Enter bid increase perc" << endl;
+      getline(cin, strBidIncreasePerc);
+      bidIncreasePerc = stod(strBidIncreasePerc);
+    }
+    bidders.push_back(new Bidder(bidderName, bidderBudget, bidProbability, bidIncreasePerc));
+    cout << "Continue? y/n" << endl;
+    getline(cin, answer);
+    if (answer == "n") break;
+  }
 
   cout << "Starting Auction!!" << endl;
   cout << "------------------" << endl;
   Auction my_auction(bidders);
-  my_auction.simulate_auction("Antique Vase", 100);
-  // my_auction.simulate_auction(itemName, price);
+  // my_auction.simulate_auction("Antique Vase", 100);
+  my_auction.simulate_auction(itemName, price);
 
   for (Bidder *bidder : bidders)
   {

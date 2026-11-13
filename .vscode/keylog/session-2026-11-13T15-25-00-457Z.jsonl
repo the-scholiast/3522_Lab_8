@@ -1,0 +1,12 @@
+{"t":1794583500459,"file":"","type":"session-start"}
+{"t":1794583500560,"file":"main.cpp","type":"file-preexisting","size":2827}
+{"t":1794583500560,"file":"CMakeLists.txt","type":"file-preexisting","size":288}
+{"t":1794583500560,"file":"auctioneer.cpp","type":"file-preexisting","size":1508}
+{"t":1794583500560,"file":".coderewind-record","type":"file-preexisting","size":0}
+{"t":1794583500560,"file":"auction.hpp","type":"file-preexisting","size":839}
+{"t":1794583500560,"file":"auction.cpp","type":"file-preexisting","size":982}
+{"t":1794583500560,"file":"auctioneer.hpp","type":"file-preexisting","size":1498}
+{"t":1794583500560,"file":"bidder.cpp","type":"file-preexisting","size":1120}
+{"t":1794583500560,"file":"bidder.hpp","type":"file-preexisting","size":1481}
+{"t":1794583500560,"file":".gitignore","type":"file-preexisting","size":296}
+{"t":1794583500560,"file":".coderewindignore","type":"file-preexisting","size":10}

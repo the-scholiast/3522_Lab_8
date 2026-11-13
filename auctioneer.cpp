@@ -26,9 +26,11 @@ void Auctioneer::accept_bid(double bid, Bidder *bidder) {
     // TODO: if bid > highest_bid, record the new highest_bid/highest_bidder
     // and call notify_bidders().
     if (bid > highest_bid) {
-        cout << bidder->getName() << "bidded $" << bid << " in response to "
-        << (highest_bidder ? highest_bidder->getName() : "Starting bid")
-        << "'s bid of $" << highest_bid << endl;
+        if (bidder != nullptr) {
+            cout << bidder->getName() << "bidded $" << bid << " in response to "
+            << (highest_bidder ? highest_bidder->getName() : "Starting bid")
+            << "'s bid of $" << highest_bid << endl;
+        }
 
         highest_bidder = bidder;
         highest_bid = bid;

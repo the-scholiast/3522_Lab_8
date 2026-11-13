@@ -18,7 +18,6 @@ void Auction::simulate_auction(string item, double start_price) {
     // bidder/bid) and a per-bidder summary of each bidder's highest bid.
     cout << item << " at starting price $" << start_price << endl;
     auctioneer.accept_bid(start_price);
-    // auctioneer.notify_bidders();
-    cout << "The " << item << "goes to " <<auctioneer.getHighestBidder() << "for $" << auctioneer.getHighestBid() << endl;
+    cout << "The " << item << " goes to " << auctioneer.getHighestBidder()->getName() << "for $" << auctioneer.getHighestBid() << endl;
     auctioneer.printBiddersSummary();  
 }

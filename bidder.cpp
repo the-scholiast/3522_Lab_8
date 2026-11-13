@@ -13,14 +13,13 @@ void Bidder::update(Auctioneer *auctioneer) {
     // auctioneer->accept_bid(new_bid, this).
     Bidder* current_highest_bidder = auctioneer->getHighestBidder();
     double current_highest_bid = auctioneer->getHighestBid();
-    double bid_chance = static_cast<double>(rand()) / RAND_MAX; 
-    cout << bid_chance << endl;
+    double bid_chance = static_cast<double>(rand()) / RAND_MAX * 100; 
 
     if (current_highest_bidder != this && 
         current_highest_bid * bid_increase_perc <= budget && 
-        bid_chance < bid_increase_perc) {
-            auctioneer->accept_bid(current_highest_bid * bid_increase_perc, this);
+        bid_chance < bid_probability) {
             highest_bid = current_highest_bid * bid_increase_perc;
+            auctioneer->accept_bid(highest_bid, this);
         }
 }
 
